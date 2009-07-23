@@ -1,0 +1,14 @@
+#!/bin/sh -e
+
+if [ -e /var/lib/v3-format-storage/formatted ]; then
+    exit 0
+fi
+
+if ! grep -q /mnt/storage /proc/mounts; then
+    flash_eraseall -j /dev/mtd_STORAGE
+    mount /mnt/storage
+fi
+
+mkdir -p /var/lib/v3-format-storage
+touch /var/lib/v3-format-storage/formatted
+

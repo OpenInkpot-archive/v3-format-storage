@@ -1,0 +1,14 @@
+Source: v3-format-storage
+Section: core
+Priority: optional
+Maintainer: Mikhail Gusarov <dottedmag@dottedmag.net>
+XCS-Cross-Host-Build-Depends: debhelper (>= 7)
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.0
+
+Package: v3-format-storage
+Architecture: all
+Depends: mtd-support, mtd-utils
+Description: Hanlin V3 "storage" formatter
+ This package contains initscript which formats V3 "storage" partition
+ after reflashing.
